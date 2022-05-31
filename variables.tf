@@ -1,23 +1,26 @@
 variable "project_id" {
-  default = "deimos-internal-playground"
+  description = "project that the cluster should be created in"
 }
 
 variable "network" {
-  default = "prod-cluster"
+  description = "name of the network to be created for the cluster"
 }
 
 variable "cluster_name" {
-  default = "prod-cluster"
+  description = "name of the cluster"
 }
 
 variable "region" {
-  default = "asia-east1"
+  description = "region that the cluster should be created in"
 }
 
 variable "bastion_members" {
   default     = ["user:daphney.igwe@deimos.co.za"]
-  description = "users and groups with access to the bastion host"
+  description = "principals with access to the bastion host, should be prefixed with 'principal_type:' eg user:<user>"
+}
 
+variable "terraform_service_account" {
+  type = string
 }
 
 variable "roles" {

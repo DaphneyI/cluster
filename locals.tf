@@ -1,5 +1,5 @@
 locals {
-  terraform_service_account = "test-da@deimos-internal-playground.iam.gserviceaccount.com"
+  terraform_service_account = "var.terraform_service_account"
   bastion_name              = format("%s-bastion", var.cluster_name)
   bastion_zone              = format("%s-a", var.region)
   bastion_subnet_index      = index(module.vpc.subnets_names, local.bastion_subnet)
